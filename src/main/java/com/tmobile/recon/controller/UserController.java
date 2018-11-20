@@ -12,7 +12,6 @@ import com.tmobile.recon.model.User;
 import com.tmobile.recon.service.IUserService;
 
 @RestController
-// @CrossOrigin(origins = "http://localhost:3000")
 @RequestMapping ("/recon/user")
 public class UserController {
 	private static final Log log = LogFactory.getLog(UserController.class);
