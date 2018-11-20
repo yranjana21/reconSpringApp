@@ -1,6 +1,5 @@
 package com.tmobile.recon.controller;
 
-
 import java.util.List;
 
 import org.apache.commons.logging.Log;
@@ -23,12 +22,10 @@ public class ProductController {
 	@Autowired
 	private IProductService productService;
 
-	// ---------save product----------@RequestMapping(value = "fas", method = RequestMethod.POST, consumes = {
-   // MediaType.APPLICATION_JSON_VALUE }, produces = { MediaType.APPLICATION_JSON_VALUE })
-	
-	@RequestMapping (value="/save",method=RequestMethod.POST,consumes= {MediaType.APPLICATION_JSON_VALUE})
+	//------save-------
+	@RequestMapping (value = "/save", method = RequestMethod.POST, consumes = { MediaType.APPLICATION_JSON_VALUE })
 	public String saveProduct(@RequestBody Product product) {
-		
+
 		log.info("ProductController::save Product ");
 		productService.saveProduct(product);
 		return "Product saved";

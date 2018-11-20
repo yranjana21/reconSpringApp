@@ -29,16 +29,18 @@ public class UserController {
 	// --------------------------Get User Details----------
 	@RequestMapping ("/get")
 	public User getUser(@RequestBody User user) {
-		log.info("emailId----" + user.getEmail());
+		log.info(user.getEmail());
 		return userService.getUser(user.getEmail());
 	}
-	//---------------editProfile
+
+	// ---------------editProfile
 	@RequestMapping ("/edit")
 	public User editProfile(@RequestBody User user) {
-		log.info("emailId----" + user.getEmail());
+		log.info(user.getEmail());
 		return userService.getUser(user.getEmail());
 	}
-	//------------save edited Profile
+
+	// ------------save edited Profile
 	@RequestMapping ("/saveEdit")
 	public User saveEditProfile(@RequestBody User user) {
 		log.info("emailId----" + user.getEmail());
