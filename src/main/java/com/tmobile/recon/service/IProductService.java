@@ -15,4 +15,6 @@ public interface IProductService {
 
 	public void saveProduct(Product product);
 
+	public List<Product> getProductListSorted();
+
 }

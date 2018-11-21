@@ -5,6 +5,8 @@ import java.util.List;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.domain.Sort.Direction;
 import org.springframework.stereotype.Repository;
 
 import com.tmobile.recon.dao.IProductDao;
@@ -26,8 +28,13 @@ public class ProductDaoImpl implements IProductDao {
 
 	@Override
 	public void saveProduct(Product product) {
-		
 		productRepository.save(product);
+	}
+
+	@Override
+	public List<Product> getProductListSorted() {
+		Sort sortDescending = new Sort(Direction.DESC, "createdDate");
+		return productRepository.findAll(sortDescending);
 	}
 
 }

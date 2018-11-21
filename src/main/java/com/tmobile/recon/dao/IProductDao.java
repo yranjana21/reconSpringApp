@@ -12,5 +12,7 @@ public interface IProductDao {
 	public List<Product> getProductList();
 
 	public void saveProduct(Product product);
+	
+	public List<Product> getProductListSorted();
 
 }
