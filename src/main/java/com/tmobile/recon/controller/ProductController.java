@@ -32,7 +32,7 @@ public class ProductController {
 	}
 
 	// -----------get Product list--------
-	@RequestMapping ("/getlist")
+	@RequestMapping ("/getProductlist")
 	public List<Product> getProductList() {
 		return productService.getProductList();
 	}
@@ -44,7 +44,7 @@ public class ProductController {
 	}
 
 	// -------------------get product List in sorted order
-	@RequestMapping ("/getSortedlist")
+	@RequestMapping ("/getlist")
 	public List<Product> getProductListSorted() {
 		return productService.getProductListSorted();
 	}
