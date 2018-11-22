@@ -29,8 +29,8 @@ public class LoginController {
 		log.info("LoginController:validateLogin:Username-" + login.getuserName());
 		String result = loginService.validateUser(login);
 
-		System.out.println(result);
 		if (result.equals("email & password exists")){
+			log.info("LoginController:validateLogin:Welcome To Recon");
 			return new ResponseEntity<HttpStatus>(HttpStatus.FOUND);
 		} else{
 			return new ResponseEntity<HttpStatus>(HttpStatus.NOT_FOUND);
