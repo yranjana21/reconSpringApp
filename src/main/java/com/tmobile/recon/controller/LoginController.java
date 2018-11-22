@@ -25,7 +25,8 @@ public class LoginController {
 	/// ----------------Login-----------------
 	@RequestMapping (value = "/login", method = RequestMethod.POST)
 	public ResponseEntity<HttpStatus> validateLogin(@RequestBody Login login) {
-		log.info("Username-" + login.getuserName());
+		
+		log.info("LoginController:validateLogin:Username-" + login.getuserName());
 		String result = loginService.validateUser(login);
 
 		System.out.println(result);
