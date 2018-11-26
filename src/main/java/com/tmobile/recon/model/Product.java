@@ -1,12 +1,20 @@
 package com.tmobile.recon.model;
 
+import java.io.Serializable;
+import java.util.Date;
+
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.stereotype.Component;
 
 @Component
 @Document (collection = "Product")
-public class Product {
+public class Product implements Serializable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
 	@Id
 	private String productId;
@@ -16,10 +24,24 @@ public class Product {
 	private String productName;
 
 	private String productDescription;
-	
+
 	private String documentType;
-	
+
 	private String headerPresent;
+
+	private Date createdDate = new Date();
+
+	public Date getCreatedDate() {
+		return createdDate;
+	}
+
+	public void setCreatedDate(Date createdDate) {
+		this.createdDate = createdDate;
+	}
+
+	public void setDocumentType(String documentType) {
+		this.documentType = documentType;
+	}
 
 	public String getProductId() {
 		return productId;
@@ -57,10 +79,6 @@ public class Product {
 		return documentType;
 	}
 
-	public void setdocumentType(String documentType) {
-		this.documentType = documentType;
-	}
-
 	public String getHeaderPresent() {
 		return headerPresent;
 	}
@@ -71,10 +89,7 @@ public class Product {
 
 	@Override
 	public String toString() {
-		return "Product [productId=" + productId + ", productLogo=" + productLogo + ", productName=" + productName + ", productDescription=" + productDescription + ", documentType=" + documentType + ", headerPresent=" + headerPresent + "]";
+		return "Product [productId=" + productId + ", productLogo=" + productLogo + ", productName=" + productName + ", productDescription=" + productDescription + ", documentType=" + documentType + ", headerPresent=" + headerPresent + ", createdDate=" + createdDate + "]";
 	}
 
-	
-
-	
 }

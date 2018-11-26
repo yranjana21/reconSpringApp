@@ -22,11 +22,10 @@ public class TaskFlowDataController {
 
 	@RequestMapping (value = "/taskFlowData", method = RequestMethod.POST)
 	public String saveData(@RequestBody TaskFlowData taskFlowData) {
-		
+
 		log.info("TaskFlowDataController : saveData");
 		taskFlowDataService.saveData(taskFlowData);
 		return "Data Saved successfully";
-		
 
 	}
 

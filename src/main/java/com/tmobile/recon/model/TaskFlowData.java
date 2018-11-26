@@ -6,9 +6,9 @@ import org.springframework.stereotype.Component;
 @Component
 @Document (collection = "TaskFlowData")
 public class TaskFlowData {
-	
+
 	private String entityId;
-	
+
 	private Object flowData;
 
 	public String getEntityId() {
@@ -26,6 +26,5 @@ public class TaskFlowData {
 	public void setFlowData(Object flowData) {
 		this.flowData = flowData;
 	}
-	
-	
+
 }

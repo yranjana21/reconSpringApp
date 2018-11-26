@@ -22,7 +22,7 @@ public class ProductController {
 	@Autowired
 	private IProductService productService;
 
-	//------save-------
+	// ------save-------
 	@RequestMapping (value = "/save", method = RequestMethod.POST, consumes = { MediaType.APPLICATION_JSON_VALUE })
 	public String saveProduct(@RequestBody Product product) {
 
@@ -32,14 +32,20 @@ public class ProductController {
 	}
 
 	// -----------get Product list--------
-	@RequestMapping ("/getlist")
+	@RequestMapping ("/getProductlist")
 	public List<Product> getProductList() {
 		return productService.getProductList();
 	}
 
+	// --------------- get Product Names
 	@RequestMapping ("/getnames")
 	public List<String> getProductNames() {
 		return productService.getProductNames();
 	}
 
+	// -------------------get product List in sorted order
+	@RequestMapping ("/getlist")
+	public List<Product> getProductListSorted() {
+		return productService.getProductListSorted();
+	}
 }

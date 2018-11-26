@@ -25,11 +25,12 @@ public class LoginController {
 	/// ----------------Login-----------------
 	@RequestMapping (value = "/login", method = RequestMethod.POST)
 	public ResponseEntity<HttpStatus> validateLogin(@RequestBody Login login) {
-		log.info("Username-" + login.getuserName());
+
+		log.info("LoginController:validateLogin:Username-" + login.getuserName());
 		String result = loginService.validateUser(login);
 
-		System.out.println(result);
 		if (result.equals("email & password exists")){
+			log.info("LoginController:validateLogin:Welcome To Recon");
 			return new ResponseEntity<HttpStatus>(HttpStatus.FOUND);
 		} else{
 			return new ResponseEntity<HttpStatus>(HttpStatus.NOT_FOUND);
