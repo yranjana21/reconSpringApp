@@ -43,7 +43,7 @@ public class LoginControllerTest {
 			this.mockMvc
 					.perform(post("/recon/login").accept(MediaType.APPLICATION_JSON)
 							.contentType(MediaType.APPLICATION_JSON).content(json))
-					.andExpect(status().is2xxSuccessful()).andDo(print());
+					.andExpect(status().is3xxRedirection()).andDo(print());
 			log.info("Test Validate Login Done-----");
 		} catch (Exception e) {
 			log.error(e.getMessage(), e);

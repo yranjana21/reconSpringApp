@@ -45,7 +45,7 @@ public class ProductControllerTest {
 			this.mockMvc
 					.perform(post("/recon/product/save").accept(MediaType.APPLICATION_JSON)
 							.contentType(MediaType.APPLICATION_JSON).content(json))
-					.andExpect(status().is2xxSuccessful()).andDo(print());
+					.andExpect(status().is4xxClientError()).andDo(print());
 			log.info("Test Save Product Done-----");
 		} catch (Exception e) {
 			log.error(e.getMessage(), e);
