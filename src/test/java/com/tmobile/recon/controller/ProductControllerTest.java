@@ -38,7 +38,7 @@ public class ProductControllerTest {
 		product.setProductLogo("productLogo07");
 		product.setProductName("Name07");
 		product.setProductDescription("Description");
-		product.setdocumentType("csv");
+		product.setDocumentType("csv");
 		product.setHeaderPresent("Yes");
 		json = new Gson().toJson(product);
 		try {
