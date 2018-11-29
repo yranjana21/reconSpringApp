@@ -4,7 +4,7 @@ FROM java:8
 # Add a volume pointing to /tmp
 VOLUME /tmp
 
-# Add the application's jar to the container
+# Add the application's jar to the containers 
 ADD target/Users-0.0.1-SNAPSHOT.jar app.jar
 
 RUN bash -c 'touch /app.jar'
