@@ -17,6 +17,6 @@ EXPOSE 8000
 #ENV NAME World
 
 # Run app.py when the container launches
-CMD ["java", "-jar", "/target/Users-0.0.1-SNAPSHOT.jar --server.port=8000"]
+CMD ["java", "-jar", "Users-0.0.1-SNAPSHOT.jar"]
 
 
