@@ -1,5 +1,5 @@
-FROM openjdk:8
-VOLUME /target
-ARG JAR_FILE
-COPY ${JAR_FILE} Users-0.0.1-SNAPSHOT.jar
-ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/Users-0.0.1-SNAPSHOT.jar"]
+FROM java:8
+COPY ./target/Users-0.0.1-SNAPSHOT.jar
+WORKDIR /target
+EXPOSE 8000
+CMD ["java", "-jar", "Users-0.0.1-SNAPSHOT.jar"]
