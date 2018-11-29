@@ -17,6 +17,7 @@ EXPOSE 8000
 #ENV NAME World
 
 # Run app.py when the container launches
-CMD ["java", "-jar", "Users-0.0.1-SNAPSHOT.jar"]
+#CMD ["java", "-jar", "Users-0.0.1-SNAPSHOT.jar"]
+ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/Users-0.0.1-SNAPSHOT.jar"]
 
 
